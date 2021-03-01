@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Список задач</title>
+</head>
+<body>
+    <h1>Список задач</h1>
+    <p><a href="/task/add/">Добавить задачу</a></p>
+        {% for task in tasks %}
+            <h2>{{ task.description }} Статус:{{ task.status }}   </h2>
+            <p><a href="/task/?id={{ task.id }}">Подробнее...</a></p>
+            <hr>
+        {% endfor %}
+
+</body>
+</html>
