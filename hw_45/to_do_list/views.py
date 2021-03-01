@@ -31,4 +31,11 @@ def task_create_view(request):
             'task': task
         }
 
-        return render(request, 'index.html', context)
+        return render(request, 'task_view.html', context)
+
+
+def task_view(request):
+    task_id = request.GET.get('id')
+    task = ToDoList.objects.get(id=task_id)
+    context = {'task': task}
+    return render(request, 'task_view.html', context)
