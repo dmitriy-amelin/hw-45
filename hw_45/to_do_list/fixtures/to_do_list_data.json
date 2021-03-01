@@ -1,0 +1,30 @@
+[
+{
+  "model": "to_do_list.todolist",
+  "pk": 1,
+  "fields": {
+    "author": "Unknown",
+    "description": "Тестовая задача",
+    "status": "new",
+    "date_of_completion": "2021-03-01"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$5z9lXV0YA03F$MvaPZaW3wkUV/LnUAOOuSEub2HEPNnyI7lSP1lkERTk=",
+    "last_login": "2021-03-01T14:38:15.559Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-02-28T16:43:20.319Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
