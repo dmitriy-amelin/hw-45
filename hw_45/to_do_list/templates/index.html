@@ -1,20 +1,39 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Список задач</title>
 </head>
 <body>
-    <h1>Список задач</h1>
-    <p><a href="/task/add/">Добавить задачу</a></p>
-        {% for task in tasks %}
-            <h2>{{ task.description }} Статус:{{ task.status }}   </h2>
-            <p><a href="/task/?id={{ task.id }}">Подробнее...</a></p>
+<header class="header">
+    <div class="container header-inner">
+        <a href="/" class="logo">Список задач</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/task/add/">Добавить задачу</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="main-block container">
+    <div class="link">
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <a href="/task/?id={{ task.id }}">
+                    <div>{{ task.description }}</div>
+                    <div>Статус: {{ task.status }}</div>
+                </a>
+            </li>
             <hr>
         {% endfor %}
-
+        </ul>
+    </div>
+</div>
 </body>
 </html>
