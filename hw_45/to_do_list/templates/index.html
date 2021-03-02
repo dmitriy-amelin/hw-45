@@ -21,6 +21,9 @@
     </div>
 </header>
 <div class="main-block container">
+    {% if not tasks %}
+        <h2>ЗАДАЧ НЕТ</h2>
+    {% endif %}
     <div class="link">
         <ul>
             {% for task in tasks %}
