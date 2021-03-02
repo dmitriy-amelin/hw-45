@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "author": "Unknown",
-    "description": "Тестовая задача",
+    "description": "РўРµСЃС‚РѕРІР°СЏ Р·Р°РґР°С‡Р°",
     "status": "done",
     "date_of_completion": "2021-03-01"
   }
@@ -14,7 +14,7 @@
   "pk": 3,
   "fields": {
     "author": "test",
-    "description": "Тестовая задача 3",
+    "description": "РўРµСЃС‚РѕРІР°СЏ Р·Р°РґР°С‡Р° 3",
     "status": "new",
     "date_of_completion": "2021-03-02"
   }
@@ -24,7 +24,7 @@
   "pk": 4,
   "fields": {
     "author": "test",
-    "description": "Тестовая задача 4",
+    "description": "РўРµСЃС‚РѕРІР°СЏ Р·Р°РґР°С‡Р° 4",
     "status": "done",
     "date_of_completion": "2021-03-01"
   }
@@ -34,7 +34,7 @@
   "pk": 5,
   "fields": {
     "author": "test3",
-    "description": "Тестовая задача 5",
+    "description": "РўРµСЃС‚РѕРІР°СЏ Р·Р°РґР°С‡Р° 5",
     "status": "in_progress",
     "date_of_completion": "2021-03-04"
   }
@@ -44,7 +44,7 @@
   "pk": 8,
   "fields": {
     "author": "",
-    "description": "Новая тестовая задача",
+    "description": "РќРѕРІР°СЏ С‚РµСЃС‚РѕРІР°СЏ Р·Р°РґР°С‡Р°",
     "status": "new",
     "date_of_completion": "2021-03-05"
   }
