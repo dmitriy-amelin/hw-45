@@ -10,8 +10,9 @@
 <body>
     <p><a href="/">На главную</a></p>
     <h1>Задача:</h1>
-    <h2>Описание задачи: {{ task.description }}</h2>
     <p>Статус задачи: {{ task.status }}</p>
+    <h3>Краткое описание задачи: {{ task.description }}</h3>
+    <h4>Полное описание задачи: {{ task.full_description }}</h4>
     <p>Дата выполнения: {{ task.date_of_completion }}</p>
 </body>
 </html>
