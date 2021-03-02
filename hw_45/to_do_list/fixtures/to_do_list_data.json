@@ -5,8 +5,48 @@
   "fields": {
     "author": "Unknown",
     "description": "Тестовая задача",
-    "status": "new",
+    "status": "done",
     "date_of_completion": "2021-03-01"
+  }
+},
+{
+  "model": "to_do_list.todolist",
+  "pk": 3,
+  "fields": {
+    "author": "test",
+    "description": "Тестовая задача 3",
+    "status": "new",
+    "date_of_completion": "2021-03-02"
+  }
+},
+{
+  "model": "to_do_list.todolist",
+  "pk": 4,
+  "fields": {
+    "author": "test",
+    "description": "Тестовая задача 4",
+    "status": "done",
+    "date_of_completion": "2021-03-01"
+  }
+},
+{
+  "model": "to_do_list.todolist",
+  "pk": 5,
+  "fields": {
+    "author": "test3",
+    "description": "Тестовая задача 5",
+    "status": "in_progress",
+    "date_of_completion": "2021-03-04"
+  }
+},
+{
+  "model": "to_do_list.todolist",
+  "pk": 8,
+  "fields": {
+    "author": "",
+    "description": "Новая тестовая задача",
+    "status": "new",
+    "date_of_completion": "2021-03-05"
   }
 },
 {
