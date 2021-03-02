@@ -9,7 +9,7 @@ class ToDoListAdmin(admin.ModelAdmin):
     list_display = ['id', 'description', 'status', 'date_of_completion']
     list_filter = ['status']
     search_fields = ['status', 'description']
-    fields = ['description', 'status', 'date_of_completion']
+    fields = ['author', 'status', 'description', 'full_description', 'date_of_completion']
 
 
 admin.site.register(ToDoList, ToDoListAdmin)
