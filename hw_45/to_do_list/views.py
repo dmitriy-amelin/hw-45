@@ -38,3 +38,10 @@ def task_create_view(request):
 def task_view(request, pk):
     task = get_object_or_404(ToDoList, id=pk)
     return render(request, 'task_view.html', context={'task': task})
+
+
+def task_update_view(request, pk):
+    task = get_object_or_404(ToDoList, id=pk)
+
+    if request.method == 'GET':
+        return render(request, 'task_update.html', context={'task': task, "choices": status_choices})

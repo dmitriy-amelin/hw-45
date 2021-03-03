@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Список задач{% endblock title %}
+
+{% block content %}
+
+    <form class="decor" action="{% url "task-update" task.id %}" method="post">
+        {% csrf_token %}
+            <h3>Изменение задачи</h3>
+            <input type="text" name="author" value="{{ task.author }}">
+            <input type="text" name="description" value="{{ task.description }}">
+            <textarea name="full_description" rows="3" >{{ task.full_description }}</textarea>
+            <select name="status">
+                <option value="{{ task.status }}" selected>{{ task.get_status_display }}</option>
+                {% for s_eng, s_ru in choices %}
+                    <option value="{{ s_eng }}">{{ s_ru }}</option>
+                {% endfor %}
+                </select>
+            <input type="text" name="date_of_completion" value="{{ task.date_of_completion }}">
+
+            <input type="submit" value="Отправить">
+    </form>
+
+{% endblock content %}

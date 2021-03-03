@@ -13,6 +13,7 @@
         <a href="{% url "task-list" %}" class="logo">Список задач</a>
         <nav class="main-nav">
             <ul>
+                {% block menu %}{% endblock menu%}
                 <li><a href="{% url "task-add" %}">Добавить задачу</a></li>
             </ul>
         </nav>

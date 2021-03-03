@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block menu %}
+    <li><a href="{% url "task-update" task.id %}">Редактировать задачу</a></li>
+{% endblock menu%}
 
 {% block title %}Список задач{% endblock title %}
 
@@ -8,6 +11,6 @@
     <div class="text-input">{{ task.description }}</div>
     <div class="text-area"> {{ task.full_description }}</div>
     <div class="text-input">Статус: {{ task.get_status_display }}</div>
-    <div class="text-input">Дата выполнения:{{ task.date_of_completion }}</div>
+    <div class="text-input"><p>Дата выполнения:</p><p>{{ task.date_of_completion }}</p></div>
 {% endblock content %}
 
