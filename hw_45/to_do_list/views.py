@@ -57,5 +57,9 @@ def task_update_view(request, pk):
 
 def task_delete_view(request, pk):
     task = get_object_or_404(ToDoList, id=pk)
-    task.delete()
-    return redirect('task-list')
+
+    if request.method == 'GET':
+        return render(request, 'task_delete.html', context={'task': task})
+    elif request.method == 'POST':
+        task.delete()
+        return redirect('task-list')
