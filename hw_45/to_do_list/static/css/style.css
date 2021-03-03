@@ -163,7 +163,7 @@ body{
     padding: 50px;
     line-height: 40px;
 }
-.inner input, .inner textarea, .inner select, .text-input, .text-area {
+.inner input, .inner textarea, .inner select, .text-input, .text-area, .cancel_button {
    display: block;
    width: 100%;
    padding: 0 20px;
@@ -173,7 +173,7 @@ body{
    border-radius: 20px;
    font-family: 'Roboto', sans-serif;
 }
-.inner input[type="submit"] {
+.inner input[type="submit"], .cancel_button {
     margin-top: 30px;
     background: #f69a73;
     border-bottom: 4px solid #d87d56;
@@ -190,4 +190,14 @@ body{
     font-weight: 500;
     font-size: 24px;
     color: #707981;
+}
+
+.cancel_button {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submit_button {
+    cursor: pointer;
 }
