@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -30,7 +30,7 @@ def task_create_view(request):
             date_of_completion=date_of_completion
         )
 
-        return HttpResponseRedirect(reverse('task-view', kwargs={'pk': task.id}))
+        return redirect('task-view', pk=task.id)
 
 
 def task_view(request, pk):
