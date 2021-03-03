@@ -163,7 +163,7 @@ body{
     padding: 50px;
     line-height: 40px;
 }
-.inner input, .inner textarea, .inner select {
+.inner input, .inner textarea, .inner select, .text-input, .text-area {
    display: block;
    width: 100%;
    padding: 0 20px;
@@ -180,7 +180,7 @@ body{
     color: white;
     font-size: 14px;
 }
-.inner textarea {
+.inner textarea, .text-area {
     resize: none;
     line-height: 20px;
     height: 200px

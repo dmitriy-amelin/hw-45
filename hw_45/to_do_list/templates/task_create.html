@@ -10,12 +10,12 @@
             <input type="text" name="author" placeholder="Автор">
             <input type="text" name="description" placeholder="Краткое описание...">
             <textarea name="full_description" placeholder="Полное описание..." rows="3"></textarea>
-            <input type="text" name="date_of_completion" placeholder="Дата выполнения в формате 'YYYY-mm-dd'">
             <select name="status">
-                 {% for s_eng, s_ru in choices %}
-                <option value="{{ s_eng }}">{{ s_ru }}</option>
-                 {% endfor %}
-             </select>
+                {% for s_eng, s_ru in choices %}
+                    <option value="{{ s_eng }}">{{ s_ru }}</option>
+                {% endfor %}
+            </select>
+           <input type="text" name="date_of_completion" placeholder="Дата выполнения в формате 'YYYY-mm-dd'">
 
             <input type="submit" value="Отправить">
     </form>
