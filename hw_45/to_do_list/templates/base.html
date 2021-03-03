@@ -14,7 +14,7 @@
         <nav class="main-nav">
             <ul>
                 {% block menu %}{% endblock menu%}
-                <li><a href="{% url "task-add" %}">Добавить задачу</a></li>
+                {% include "menu_element.html" with url_name="task-add" title="Добавить задачу" %}
             </ul>
         </nav>
     </div>
