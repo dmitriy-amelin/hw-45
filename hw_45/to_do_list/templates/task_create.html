@@ -1,37 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Новая задача</title>
-</head>
-<body>
-    <p><a href="{% url "task-list" %}">Все задачи</a></p>
-    <h1>Создайте новую задачу</h1>
-    <form action="/task/add/" method="post">
+{% extends 'base.html' %}
+
+{% block title %}Список задач{% endblock title %}
+
+{% block content %}
+
+    <form class="decor" action="{% url "task-add" %}" method="post">
         {% csrf_token %}
-        <label>Author:</label><br/>
-        <input type="text" name="author"/><br/>
-        <br/>
-        <label>Краткое описание:</label><br/>
-        <input type="text" name="description"/><br/>
-        <label>Расширенное описание:</label><br/>
-        <input type="text" name="full_description"/><br/>
-        <label>Статус:</label><br/>
+            <h3>Создайте новую задачу</h3>
+            <input type="text" name="author" placeholder="Автор">
+            <input type="text" name="description" placeholder="Краткое описание...">
+            <textarea name="full_description" placeholder="Полное описание..." rows="3"></textarea>
+            <input type="text" name="date_of_completion" placeholder="Дата выполнения в формате 'YYYY-mm-dd'">
+            <select name="status">
+                 {% for s_eng, s_ru in choices %}
+                <option value="{{ s_eng }}">{{ s_ru }}</option>
+                 {% endfor %}
+             </select>
 
-        <select name="status">
-             {% for s_eng, s_ru in choices %}
-            <option value="{{ s_eng }}">{{ s_ru }}</option>
-             {% endfor %}
-         </select>
-        <br/>
+            <input type="submit" value="Отправить">
+    </form>
 
-        <label>Дата выполнения:</label><br/>
-        <input type="text" name="date_of_completion"/><br/>
-
-        <input type="submit" value="Send"/>
-
-</body>
-</html>
+{% endblock content %}

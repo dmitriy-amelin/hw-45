@@ -19,12 +19,14 @@ def task_create_view(request):
         return render(request, 'task_create.html', {"choices": status_choices})
     elif request.method == 'POST':
         description = request.POST.get("description")
+        full_description = request.POST.get("full_description")
         status = request.POST.get("status")
         author = request.POST.get("author")
         date_of_completion = request.POST.get("date_of_completion")
 
         task = ToDoList.objects.create(
             description=description,
+            full_description=full_description,
             status=status,
             author=author,
             date_of_completion=date_of_completion

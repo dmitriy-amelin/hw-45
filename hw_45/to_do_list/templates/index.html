@@ -1,42 +1,24 @@
-<!doctype html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Список задач</title>
-</head>
-<body>
-<header class="header">
-    <div class="container header-inner">
-        <a href="{% url "task-list" %}" class="logo">Список задач</a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="{% url "task-add" %}">Добавить задачу</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<div class="main-block container">
-    {% if not tasks %}
-        <h2>ЗАДАЧ НЕТ</h2>
-    {% endif %}
+{% extends 'base.html' %}
+
+{% block title %}Список задач{% endblock title %}
+
+{% block content %}
+
+{% if not tasks %}
+    <h2>ЗАДАЧ НЕТ</h2>
+{% endif %}
     <div class="link">
         <ul>
             {% for task in tasks %}
             <li>
                 <a href="{% url "task-view" task.id %}">
                     <div>{{ task.description }}</div>
-                    <div>Статус: {{ task.status }}</div>
+                    <div>Статус: {{ task.get_status_display }}</div>
                 </a>
             </li>
             <hr>
         {% endfor %}
         </ul>
     </div>
-</div>
-</body>
-</html>
+{% endblock content %}
+
