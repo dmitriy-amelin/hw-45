@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}Подтвердите удаление задачи{% endblock %}
-<h2>Вы уверены, что хотите удалить статью {{ task.description }}?</h2>
+
 
 {% block content%}
+    <h2>Вы уверены, что хотите удалить задачу: {{ task.description }}?</h2>
     <form action="{% url "task-delete" task.id %}", method="POST">
-        <h2> Удаление задачи {{ task.description }}</h2>
-        {% include 'task_form.html' with button_text="Да, я хочу удалить задачу" %}
+         {% include 'task_form.html' with button_text="Да, я хочу удалить задачу" %}
 
         <div><a class="cancel_button" href="{% url "task-view" task.id %}">Нет, я передумал.</a></div>
     </form>
