@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}Редактирование задачи{% endblock title %}
-
+{% block menu %}
+    <li><a href="{% url "task-view" task.id %}">Вернуться к задаче</a></li>
+{% endblock menu %}
 {% block content %}
+
 
     <form class="decor" action="{% url "task-update" task.id %}" method="post">
         {% csrf_token %}
@@ -16,7 +19,7 @@
                     <option value="{{ s_eng }}">{{ s_ru }}</option>
                 {% endfor %}
                 </select>
-            <input type="text" name="date_of_completion" value="{{ task.date_of_completion }}">
+            <input type="text" name="date_of_completion" value="{{ task.date_of_completion|date:'Y-m-d' }}">
 
             <input type="submit" value="Отправить">
     </form>
