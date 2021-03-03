@@ -7,17 +7,7 @@
     <form class="decor" action="{% url "task-add" %}" method="post">
         {% csrf_token %}
             <h3>Создайте новую задачу</h3>
-            <input type="text" name="author" placeholder="Автор">
-            <input type="text" name="description" placeholder="Краткое описание...">
-            <textarea name="full_description" placeholder="Полное описание..." rows="3"></textarea>
-            <select name="status">
-                {% for s_eng, s_ru in choices %}
-                    <option value="{{ s_eng }}">{{ s_ru }}</option>
-                {% endfor %}
-            </select>
-           <input type="text" name="date_of_completion" placeholder="Дата выполнения 'YYYY-mm-dd'">
-
-            <input type="submit" value="Отправить">
+        {% include 'task_form.html' with button_text="Создать" placeholder_author="Автор" placeholder_description="Краткое описание" placeholder_full_description="Полное описание" placeholder_date="Дата выполнения 'YYYY-mm-dd" %}
     </form>
 
 {% endblock content %}
