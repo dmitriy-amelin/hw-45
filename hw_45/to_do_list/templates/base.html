@@ -1,0 +1,30 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Title{% endblock title %}</title>
+</head>
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <a href="{% url "task-list" %}" class="logo">Список задач</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{% url "task-add" %}">Добавить задачу</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="main-block container decor">
+    <div class="left-decoration"></div>
+    <div class="right-decoration"></div>
+    <div class="circle"></div>
+    <div class="inner">
+{% block content %}{% endblock content %}
+    </div>
+</div>
+</body>
+</html>
