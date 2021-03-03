@@ -8,7 +8,7 @@ class ToDoList(models.Model):
     description = models.TextField(verbose_name='Краткое описание')
     full_description = models.TextField(blank=True, verbose_name='Полное описание')
     status = models.CharField(max_length=40, choices=status_choices, default='new', verbose_name='Статус')
-    date_of_completion = models.DateField(auto_now_add=False,
+    date_of_completion = models.DateField(auto_now_add=False, default='',
                                           null=True, blank=True, verbose_name='Дата выполнения')
 
     class Meta:
