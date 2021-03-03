@@ -28,7 +28,7 @@
         <ul>
             {% for task in tasks %}
             <li>
-                <a href="/task/?id={{ task.id }}">
+                <a href="/task/{{ task.id }}">
                     <div>{{ task.description }}</div>
                     <div>Статус: {{ task.status }}</div>
                 </a>

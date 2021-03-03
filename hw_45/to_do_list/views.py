@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from to_do_list.models import ToDoList, status_choices
 
@@ -29,11 +30,10 @@ def task_create_view(request):
             date_of_completion=date_of_completion
         )
 
-        return HttpResponseRedirect(f'/task_view?id={task.id}')
+        return HttpResponseRedirect(reverse('task-view', kwargs={'pk': task.id}))
 
 
-def task_view(request):
-    task_id = request.GET.get('id')
-    task = ToDoList.objects.get(id=task_id)
+def task_view(request, pk):
+    task = ToDoList.objects.get(id=pk)
     context = {'task': task}
     return render(request, 'task_view.html', context)
