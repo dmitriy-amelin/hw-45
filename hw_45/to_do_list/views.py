@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -34,6 +34,5 @@ def task_create_view(request):
 
 
 def task_view(request, pk):
-    task = ToDoList.objects.get(id=pk)
-    context = {'task': task}
-    return render(request, 'task_view.html', context)
+    task = get_object_or_404(ToDoList, id=pk)
+    return render(request, 'task_view.html', context={'task': task})
