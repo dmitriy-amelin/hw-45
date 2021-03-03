@@ -45,3 +45,11 @@ def task_update_view(request, pk):
 
     if request.method == 'GET':
         return render(request, 'task_update.html', context={'task': task, "choices": status_choices})
+    elif request.method == 'POST':
+        task.description = request.POST.get("description")
+        task.full_description = request.POST.get("full_description")
+        task.status = request.POST.get("status")
+        task.author = request.POST.get("author")
+        task.date_of_completion = request.POST.get("date_of_completion")
+        task.save()
+        return redirect('task-view', pk=task.id)
