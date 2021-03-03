@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block menu %}
     <li><a href="{% url "task-update" task.id %}">Редактировать задачу</a></li>
+    <li><a href="{% url "task-delete" task.id %}">Удалить задачу</a></li>
 {% endblock menu%}
 
 {% block title %}Список задач{% endblock title %}

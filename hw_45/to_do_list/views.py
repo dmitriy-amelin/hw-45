@@ -53,3 +53,9 @@ def task_update_view(request, pk):
         task.date_of_completion = request.POST.get("date_of_completion")
         task.save()
         return redirect('task-view', pk=task.id)
+
+
+def task_delete_view(request, pk):
+    task = get_object_or_404(ToDoList, id=pk)
+    task.delete()
+    return redirect('task-list')
