@@ -12,7 +12,7 @@
 <body>
 <header class="header">
     <div class="container header-inner">
-        <a href="/" class="logo">Список задач</a>
+        <a href="{% url "task-list" %}" class="logo">Список задач</a>
         <nav class="main-nav">
             <ul>
                 <li><a href="{% url "task-add" %}">Добавить задачу</a></li>

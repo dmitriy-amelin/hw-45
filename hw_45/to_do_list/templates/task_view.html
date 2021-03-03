@@ -8,7 +8,7 @@
     <title>Просмотр задачи</title>
 </head>
 <body>
-    <p><a href="/">На главную</a></p>
+    <p><a href="{% url "task-list" %}">Все задачи</a></p>
     <h1>Задача:</h1>
     <p>Статус задачи: {{ task.get_status_display }}</p>
     <h3>Краткое описание задачи: {{ task.description }}</h3>

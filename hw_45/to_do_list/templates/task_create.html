@@ -8,6 +8,7 @@
     <title>Новая задача</title>
 </head>
 <body>
+    <p><a href="{% url "task-list" %}">Все задачи</a></p>
     <h1>Создайте новую задачу</h1>
     <form action="/task/add/" method="post">
         {% csrf_token %}
@@ -31,5 +32,6 @@
         <input type="text" name="date_of_completion"/><br/>
 
         <input type="submit" value="Send"/>
+
 </body>
 </html>
